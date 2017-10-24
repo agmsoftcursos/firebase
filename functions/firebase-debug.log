@@ -1,0 +1,59 @@
+[debug] [2017-10-23T00:30:17.405Z] ----------------------------------------------------------------------
+[debug] [2017-10-23T00:30:17.407Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Ivan\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase experimental:functions:shell
+[debug] [2017-10-23T00:30:17.407Z] CLI Version:   3.13.1
+[debug] [2017-10-23T00:30:17.407Z] Platform:      win32
+[debug] [2017-10-23T00:30:17.407Z] Node Version:  v8.4.0
+[debug] [2017-10-23T00:30:17.408Z] Time:          Mon Oct 23 2017 02:30:17 GMT+0200 (Hora de verano romance)
+[debug] [2017-10-23T00:30:17.408Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-10-23T00:30:17.421Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-10-23T00:30:17.422Z] > authorizing via signed-in user
+[debug] [2017-10-23T00:30:17.424Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/fir-pruebas-6c535  
+ Mon Oct 23 2017 02:30:17 GMT+0200 (Hora de verano romance)
+[debug] [2017-10-23T00:30:18.223Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-23T00:30:18.224Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/fir-pruebas-6c535/tokens  
+ Mon Oct 23 2017 02:30:18 GMT+0200 (Hora de verano romance)
+[debug] [2017-10-23T00:30:18.853Z] <<< HTTP RESPONSE 200
+[info] i  functions: Preparing to emulate functions.
+[debug] [2017-10-23T00:30:19.596Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/fir-pruebas-6c535  
+ Mon Oct 23 2017 02:30:19 GMT+0200 (Hora de verano romance)
+[debug] [2017-10-23T00:30:19.597Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/fir-pruebas-6c535/apiKeys  
+ Mon Oct 23 2017 02:30:19 GMT+0200 (Hora de verano romance)
+[debug] [2017-10-23T00:30:20.408Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-23T00:30:20.512Z] <<< HTTP RESPONSE 200
+[info] +  functions: addMessage
+[info] +  functions: moderator
+[info] +  functions: makeUppercase
+[debug] [2017-10-23T17:41:18.513Z] ----------------------------------------------------------------------
+[debug] [2017-10-23T17:41:18.515Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Ivan\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase experimental:functions:shell
+[debug] [2017-10-23T17:41:18.515Z] CLI Version:   3.13.1
+[debug] [2017-10-23T17:41:18.515Z] Platform:      win32
+[debug] [2017-10-23T17:41:18.515Z] Node Version:  v8.4.0
+[debug] [2017-10-23T17:41:18.516Z] Time:          Mon Oct 23 2017 19:41:18 GMT+0200 (Hora de verano romance)
+[debug] [2017-10-23T17:41:18.516Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-10-23T17:41:18.529Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-10-23T17:41:18.529Z] > authorizing via signed-in user
+[debug] [2017-10-23T17:41:18.531Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-10-23T17:41:18.531Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/P5uGQ4DPSbiuz4KRUmRsvVYKM8AX7lWvjRGcjo3Z0ck',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Mon Oct 23 2017 19:41:18 GMT+0200 (Hora de verano romance)
+[debug] [2017-10-23T17:41:18.763Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-23T17:41:18.836Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/fir-pruebas-6c535  
+ Mon Oct 23 2017 19:41:18 GMT+0200 (Hora de verano romance)
+[debug] [2017-10-23T17:41:19.677Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-23T17:41:19.678Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/fir-pruebas-6c535/tokens  
+ Mon Oct 23 2017 19:41:19 GMT+0200 (Hora de verano romance)
+[debug] [2017-10-23T17:41:20.317Z] <<< HTTP RESPONSE 200
+[info] i  functions: Preparing to emulate functions.
+[debug] [2017-10-23T17:41:23.497Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/fir-pruebas-6c535  
+ Mon Oct 23 2017 19:41:23 GMT+0200 (Hora de verano romance)
+[debug] [2017-10-23T17:41:23.497Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/fir-pruebas-6c535/apiKeys  
+ Mon Oct 23 2017 19:41:23 GMT+0200 (Hora de verano romance)
+[debug] [2017-10-23T17:41:24.320Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-23T17:41:24.524Z] <<< HTTP RESPONSE 200
+[info] +  functions: addMessage
+[info] +  functions: makeUppercase

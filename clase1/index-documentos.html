@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Firebase 3 Documentos</title>
+  <link rel="stylesheet" href="estilo.css">
+
+</head>
+<body>
+  <div class="contenido">
+    <header>
+      <img src="images/logo-firebase.png" alt="Firebase 3" width="190" height="62">  
+    </header>
+    <a href="index.html">encuesta</a> <span>documentos</span> <a href="index-colecciones.html">colecciones</a>
+    <div class="caja">
+      <p class="titular">
+        <span id="preg"></span>
+        <img src="images/up.png" alt="Colapsar encuesta" width="24" height="24" id="up">
+        <img src="images/down.png" alt="Mostrar encuesta" width="24" height="24" id="down">
+      </p>
+      <section class="encuesta" id="cuerpoencuesta">
+        <p>
+          Pregunta:
+          <br>
+          <input type="text" id="inputpregunta">
+        </p>
+        <p>
+          Descripción:
+          <br>
+          <input type="text" id="inputdescripcion">
+        </p>
+        <p>
+          <input type="checkbox" id="importante"> Importante
+        </p>
+        <p>
+          <div class="boton" id="guardarencuesta">Guardar</div>
+        </p>
+      </section>
+    </div>
+
+    <div id="resultados">
+      <div class="titular">
+        Valores de la encuesta
+      </div>
+      <div>
+        <p>Pregunta: <span id="nombre"></span></p>
+        <p>Descripción: <span id="descripcion"></span></p>
+      </div>
+    </div>
+
+  </div>
+  <div id="mensaje"></div>
+
+
+  <script src="../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../bower_components/firebase/firebase.js"></script>
+  <script src="js/inicializefire.js"></script>
+  <script src="js/funciones.js"></script>
+  
+  <script>
+    // Accedo al servicio de la base de datos
+    var database = firebase.database();
+
+
+    //recibir los valores del documento
+    var ref = database.ref('clase1/encuesta');
+    ref.on('value', function(ss) {
+      var encuesta = ss.val();
+      console.log('el dato recibido es ', encuesta)
+      if(encuesta) {
+        $('#nombre').text(encuesta.pregunta);
+        $('#descripcion').text(encuesta.descripcion);
+      } else {
+        mensajeFeedback('No tengo datos de la encuesta, deberías crearla');
+      }
+    });
+
+    // Escritura en un documento
+    // En este código estamos usando Javascript nativo, sin librerías
+    // var ref = database.ref('encuesta');
+    // document.getElementById('guardarencuesta').addEventListener('click', function() {
+    //   ref.set({
+    //     pregunta: document.getElementById('inputpregunta').value,
+    //     descripcion: document.getElementById('inputdescripcion').value
+    //   })
+    //     .then(function() {
+    //       //caso positivo
+    //       mensajeFeedback('Guardados los datos')
+    //     })
+    //     .catch( function(err) {
+    //       //caso error
+    //       mensajeFeedback('Error' + err)
+    //     })
+    // });
+
+    // acceso al documento
+    // alternativa usando jQuery
+    $("#guardarencuesta").on('click', function() {
+      var objEncuesta = {
+        pregunta: $('#inputpregunta').val(),
+        descripcion: $('#inputdescripcion').val(),
+        importante: $('#importante').prop('checked')
+      }
+      console.log(objEncuesta);
+      var ref = database.ref('clase1/encuesta');
+      ref.set(objEncuesta)
+        .then(function() {
+          mensajeFeedback('Guardados los datos')
+        })
+        .catch(function(err) {
+          mensajeFeedback('Error' + err)
+        })
+    });
+    
+    // Esta alternativa de escritura con el evento change no es correcta
+    // El problema es el uso del método set, q borra los otros contenidos del documento
+    // $('#importante').on('change', function() {
+    //   var objEncuesta = {
+    //     importante: $('#importante').prop('checked')
+    //   }
+    //   var ref = database.ref('encuesta');
+    //   ref.set(objEncuesta);
+    // });
+
+    // Altarnativa con set y navegación con la referencia por medio de child
+    $('#importante').on('change', function() {
+      var ref = database.ref('clase1/encuesta').child('importante');
+      ref.set($('#importante').prop('checked'));
+    });
+
+    // ALTERNATIVA CON UPDATE
+    $('#importante').on('change', function() {
+      var ref = database.ref('clase1/encuesta');
+      var objEncuesta = {
+        importante: $('#importante').prop('checked')
+      };
+      ref.update(objEncuesta)
+        .then(function() {
+          mensajeFeedback('Actualizado con éxito');
+        })
+        .catch(function(err) {
+        mensajeFeedback('Error' + err);
+        })
+    });
+  </script>
+
+</body>
+</html>

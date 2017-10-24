@@ -1,0 +1,22 @@
+{
+  "name": "cursoagmsoft",
+  "homepage": "\"\"",
+  "description": "curso de firebase AgmSoft",
+  "main": "index.html",
+  "authors": [
+    "Ivan Amo"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "firebase": "^4.4.0",
+    "jquery": "^3.2.1"
+  },
+  "private": true
+}

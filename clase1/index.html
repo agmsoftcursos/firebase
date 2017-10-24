@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Firebase 3 Encuesta</title>
+  <link rel="stylesheet" href="estilo.css">
+
+</head>
+<body>
+  <div class="contenido">
+    <header>
+      <img src="images/logo-firebase.png" alt="Firebase 3" width="190" height="62">  
+    </header>
+    <span>encuesta</span> <a href="index-documentos.html">documentos</a> <a href="index-colecciones.html">colecciones</a>
+    <div class="caja">
+      <p class="titular">
+        <span id="preg"></span>
+        <img src="images/up.png" alt="Colapsar encuesta" width="24" height="24" id="up">
+        <img src="images/down.png" alt="Mostrar encuesta" width="24" height="24" id="down">
+      </p>
+      <section class="encuesta" id="cuerpoencuesta">
+        <p class="descrip" id="desc"></p>
+        <ul id="lista">
+        </ul>
+        <div class="boton" id="votar">Votar</div>
+      </section>
+    </div>
+
+    <div id="resultados">
+      <div class="titular">
+        Están diciendo...
+      </div>
+      <div id="sinrespuestas">Sin respuestas recibidas...</div>
+    </div>
+  </div>
+  
+  <div id="mensaje"></div>
+  
+  <script src="../bower_components/firebase/firebase.js"></script>
+  <script src="js/inicializefire.js"></script>
+  <script src="js/funciones.js"></script>
+  <script src="js/database.js"></script>
+  
+</body>
+</html>
